@@ -1,0 +1,104 @@
+工具网站：
+1、https://curlconverter.com/
+2、https://pythontutor.com
+================================================================
+PYTHON环境：3.8.3
+attrs==23.2.0
+Automat==22.10.0
+beautifulsoup4==4.7.1
+certifi==2022.6.15
+cffi==1.16.0
+charset-normalizer==2.1.0
+constantly==23.10.4
+cryptography==36.0.2
+cssselect==1.2.0
+distlib==0.3.8
+filelock==3.15.1
+grpcio==1.54.0
+grpcio-tools==1.54.0
+h2==3.2.0
+hpack==3.0.0
+hyperframe==5.2.0
+hyperlink==21.0.0
+idna==3.3
+incremental==22.10.0
+itemadapter==0.9.0
+itemloaders==1.3.1
+jmespath==1.0.1
+lxml==5.2.1
+packaging==24.0
+parsel==1.9.1
+pillow==10.3.0
+pipenv==2024.0.1
+platformdirs==4.2.2
+priority==1.3.0
+Protego==0.3.1
+protobuf==4.22.3
+pyasn1==0.6.0
+pyasn1_modules==0.4.0
+pycparser==2.22
+PyDispatcher==2.0.7
+PyExecJS==1.5.1
+pymongo==3.7.2
+pyOpenSSL==22.0.0
+pypiwin32==223
+pywin32==306
+queuelib==1.7.0
+requests==2.28.1
+Scrapy==2.5.0
+selenium==3.141.0
+service-identity==24.1.0
+six==1.16.0
+soupsieve==2.5
+Twisted==22.10.0
+twisted-iocpsupport==1.0.4
+typing_extensions==4.12.1
+urllib3==1.26.11
+virtualenv==20.26.2
+w3lib==2.2.0
+zope.interface==6.4.post2
+
+================================================================
+问题点整理：
+1、招采网执行过程中有遇到以下问题：
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "D:\Python\Python38-32\lib\threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "D:\Python\Python38-32\lib\threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\Python\Python38-32\lib\subprocess.py", line 1366, in _readerthread
+    buffer.append(fh.read())
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xad in position 276: illegal multibyte sequence
+Traceback (most recent call last):
+  File "D:/PythonProjects/lujing_requests_scrapy/project/bidcenter.py", line 44, in <module>
+    return_data = js_script.call('AESDecrypt', res_text)
+  File "D:\Python\Python38-32\lib\site-packages\execjs\_abstract_runtime_context.py", line 37, in call
+    return self._call(name, *args)
+  File "D:\Python\Python38-32\lib\site-packages\execjs\_external_runtime.py", line 92, in _call
+    return self._eval("{identifier}.apply(this, {args})".format(identifier=identifier, args=args))
+  File "D:\Python\Python38-32\lib\site-packages\execjs\_external_runtime.py", line 78, in _eval
+    return self.exec_(code)
+  File "D:\Python\Python38-32\lib\site-packages\execjs\_abstract_runtime_context.py", line 18, in exec_
+    return self._exec_(source)
+  File "D:\Python\Python38-32\lib\site-packages\execjs\_external_runtime.py", line 87, in _exec_
+    output = self._exec_with_pipe(source)
+  File "D:\Python\Python38-32\lib\site-packages\execjs\_external_runtime.py", line 103, in _exec_with_pipe
+    stdoutdata, stderrdata = p.communicate(input=input)
+  File "D:\Python\Python38-32\lib\subprocess.py", line 1024, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "D:\Python\Python38-32\lib\subprocess.py", line 1416, in _communicate
+    stdout = stdout[0]
+IndexError: list index out of range
+解决方案：
+将\Python\Python38-32\lib\subprocess.py文件中：
+def __init__(self, args, bufsize=-1, executable=None,
+                 stdin=None, stdout=None, stderr=None,
+                 preexec_fn=None, close_fds=True,
+                 shell=False, cwd=None, env=None, universal_newlines=None,
+                 startupinfo=None, creationflags=0,
+                 restore_signals=True, start_new_session=False,
+                 pass_fds=(), *, encoding=None, errors=None, text=None):
+encoding=None
+修改为：
+encoding='utf-8'
