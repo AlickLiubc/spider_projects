@@ -107,3 +107,7 @@ encoding='utf-8'
 2-1、https://blog.csdn.net/python_9k/article/details/138318898
 2-2、https://blog.csdn.net/qq_61565654/article/details/132823467
 
+3、https://spa2.scrape.center/
+pip install playwright==1.39.0
+# 安装playwright支持的浏览器
+playwright install
