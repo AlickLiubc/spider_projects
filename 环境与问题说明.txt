@@ -120,3 +120,6 @@ playwright install
 
 6、有道翻译
 备注：需要在代码执行前新建logs目录
+
+7、红人点集网模拟登录
+页面链接：https://www.hh1024.com/#/login?redirect=%2FrealTimeLiving
