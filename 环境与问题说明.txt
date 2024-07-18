@@ -123,3 +123,10 @@ playwright install
 
 7、红人点集网模拟登录
 页面链接：https://www.hh1024.com/#/login?redirect=%2FrealTimeLiving
+
+8、需求：
+8-1.获取oklink平台中 Tether USD 浏览器中的区块链数据
+8-2.至少获取500条数据
+8-3.需要对数据进行存储，存储于Excel表格里面
+8-4.需求数据：区块，所属链，时间，交易数量，转账总数，总手续费
+目标URL：https://www.oklink.com/cn/usdt/block-list
