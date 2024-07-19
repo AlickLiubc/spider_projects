@@ -131,3 +131,6 @@ playwright install
 8-3.需要对数据进行存储，存储于Excel表格里面
 8-4.需求数据：区块，所属链，时间，交易数量，转账总数，总手续费
 目标URL：https://www.oklink.com/cn/usdt/block-list
+
+9、粉笔网登录
+页面链接：https://fenbi.com/page/home
