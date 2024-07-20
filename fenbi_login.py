@@ -1,7 +1,9 @@
 import requests
 import execjs
 
-
+"""
+    粉笔网登录
+"""
 def main():
     phone = input('请输入手机号：')
     pwd = input('请输入密码：')
@@ -55,7 +57,8 @@ def main():
         'phone': phone,
     }
 
-    response = requests.post('https://login.fenbi.com/api/users/loginV2', params=params, cookies=cookies, headers=headers, data=data)
+    response = requests.post('https://login.fenbi.com/api/users/loginV2', params=params, cookies=cookies,
+                             headers=headers, data=data)
     print(response.text)
 
 

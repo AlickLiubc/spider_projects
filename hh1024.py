@@ -5,7 +5,6 @@ import execjs
 """
     红人点集网模拟登录
 """
-
 def main(phone_num, pwd):
     current_timestamp = int(time.time() * 1000)
 
