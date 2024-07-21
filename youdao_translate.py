@@ -26,7 +26,8 @@ browser = context.chromium.launch()
 page = browser.new_page()
 
 page.route(
-    "https://shared.ydstatic.com/dict/translation-website/0.1.3/js/textTranslate.da92fa14.js",
+    # "https://shared.ydstatic.com/dict/translation-website/0.1.3/js/textTranslate.da92fa14.js",
+    "https://shared.ydstatic.com/dict/translation-website/0.1.4/js/textTranslate.da92fa14.js",
     lambda route: route.fulfill(path='js/mock_text_translate.js'),
 )
 
