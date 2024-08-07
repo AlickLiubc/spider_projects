@@ -134,3 +134,7 @@ playwright install
 
 9、粉笔网登录
 页面链接：https://fenbi.com/page/home
+
+10、英雄联盟皮肤下载
+project_for_hero_skins
+注意：需要手动新增project_for_hero_skins/pics目录
